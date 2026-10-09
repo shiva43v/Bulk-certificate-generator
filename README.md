@@ -36,11 +36,11 @@ FastAPI ships with interactive API docs, so you can try every endpoint without w
    }
 ```
    The response is `202 Accepted`. The third recipient is invalid, so it is marked as failed straight away.
-4. Copy the `id` from the response.
-5. Use `GET /jobs/{job_id}` to check status and progress. Once the worker has finished, the status should be `completed_with_errors` with 2 succeeded and 1 failed.
-6. Use `GET /jobs/{job_id}/certificates?status=failed` to see the error for the invalid row (for example, `Name is required`).
-7. Use `GET /jobs/{job_id}/certificates` to list all results. Open any `download_url` in the browser to view that recipient's PDF.
-8. Open `http://localhost:8000/jobs/{job_id}/download` in the browser to download a ZIP of all successfully generated certificates.
+- Copy the `id` from the response.
+- Use `GET /jobs/{job_id}` to check status and progress. Once the worker has finished, the status should be `completed_with_errors` with 2 succeeded and 1 failed.
+- Use `GET /jobs/{job_id}/certificates?status=failed` to see the error for the invalid row (for example, `Name is required`).
+- Use `GET /jobs/{job_id}/certificates` to list all results. Open any `download_url` in the browser to view that recipient's PDF.
+- Open `http://localhost:8000/jobs/{job_id}/download` in the browser to download a ZIP of all successfully generated certificates.
 
 
 - Interactive docs (try every endpoint in the browser): http://localhost:8000/docs
