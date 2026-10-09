@@ -1,0 +1,20 @@
+services:
+  api:
+    build:
+      context: .
+      target: runtime
+    ports:
+      - "8000:8000"
+    volumes:
+      - certificate_data:/app/data      # keeps the DB and PDFs across restarts
+    restart: unless-stopped
+
+  # Run with:  docker compose run --rm tests
+  tests:
+    build:
+      context: .
+      target: test
+    profiles: ["test"]                  # not started by `docker compose up`
+
+volumes:
+  certificate_data:
